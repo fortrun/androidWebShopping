@@ -15,6 +15,7 @@
 
 package com.lava.music.data.network;
 
+import com.lava.music.data.network.model.Banner;
 import com.lava.music.data.network.model.BlogResponse;
 import com.lava.music.data.network.model.LoginRequest;
 import com.lava.music.data.network.model.LoginResponse;
@@ -42,4 +43,6 @@ public interface ApiHelper {
     Single<BlogResponse> getBlogApiCall();
 
     Single<OpenSourceResponse> getOpenSourceApiCall();
+
+    Single<Banner> getBannerApiCall();
 }

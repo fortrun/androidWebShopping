@@ -15,13 +15,12 @@
 
 package com.lava.music.data.network;
 
+import com.lava.music.data.network.model.Banner;
 import com.lava.music.data.network.model.OpenSourceResponse;
 import com.lava.music.data.network.model.BlogResponse;
 import com.lava.music.data.network.model.LoginRequest;
 import com.lava.music.data.network.model.LoginResponse;
 import com.lava.music.data.network.model.LogoutResponse;
-import com.lava.music.data.network.model.OpenSourceResponse;
-import com.lava.music.data.network.model.OpenSourceResponse;
 import com.rx2androidnetworking.Rx2AndroidNetworking;
 
 import javax.inject.Inject;
@@ -100,6 +99,14 @@ public class AppApiHelper implements ApiHelper {
                 .addHeaders(mApiHeader.getProtectedApiHeader())
                 .build()
                 .getObjectSingle(OpenSourceResponse.class);
+    }
+
+    @Override
+    public Single<Banner> getBannerApiCall() {
+        return Rx2AndroidNetworking.get(ApiEndPoint.ENDPOINT_NIDE_API)
+                .addHeaders(mApiHeader.getProtectedApiHeader())
+                .build()
+                .getObjectSingle(Banner.class);
     }
 }
 

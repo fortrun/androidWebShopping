@@ -4,7 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.lava.music.ui.feed.blogs.BlogFragment;
 import com.lava.music.ui.feed.opensource.OpenSourceFragment;
 import com.lava.music.ui.main.home.HomePageFragment;
 

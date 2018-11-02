@@ -10,15 +10,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lava.music.R;
+import com.lava.music.data.network.model.Banner;
 import com.lava.music.di.component.ActivityComponent;
 import com.lava.music.ui.base.BaseFragment;
+
+import java.util.List;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class HomePageFragment extends BaseFragment {
+public class HomePageFragment extends BaseFragment implements HomePageMvpView{
 
     @BindView(R.id.banner_view)
     RecyclerView mBannerList;
@@ -26,7 +29,8 @@ public class HomePageFragment extends BaseFragment {
     @Inject
     GridLayoutManager mListLayoutManager;
 
-
+    @Inject
+    BannerAdapter mBannerAdapter;
 
     public static HomePageFragment getInstance() {
         Bundle args = new Bundle();
@@ -38,6 +42,7 @@ public class HomePageFragment extends BaseFragment {
     @Override
     protected void setUp(View view) {
         mBannerList.setLayoutManager(mListLayoutManager);
+        mBannerList.setAdapter(mBannerAdapter);
     }
 
     @Nullable
@@ -53,5 +58,10 @@ public class HomePageFragment extends BaseFragment {
         }
         setUp(homeView);
         return homeView;
+    }
+
+    @Override
+    public void updateRepo(List<Banner.Item> bannerItems) {
+        mBannerAdapter.setData(bannerItems);
     }
 }

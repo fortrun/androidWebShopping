@@ -20,7 +20,6 @@ import android.content.Intent;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -35,8 +34,6 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.ScaleAnimation;
 import android.widget.TextView;
 
 import com.lava.music.ui.base.BaseActivity;
@@ -45,16 +42,9 @@ import com.lava.music.BuildConfig;
 import com.lava.music.R;
 import com.lava.music.data.db.model.Question;
 import com.lava.music.ui.about.AboutFragment;
-import com.lava.music.ui.base.BaseActivity;
 import com.lava.music.ui.custom.RoundedImageView;
-import com.lava.music.ui.feed.FeedActivity;
-import com.lava.music.ui.feed.FeedPagerAdapter;
 import com.lava.music.ui.login.LoginActivity;
 import com.lava.music.ui.main.rating.RateUsDialog;
-import com.lava.music.utils.ScreenUtils;
-import com.mindorks.placeholderview.SwipeDecor;
-import com.mindorks.placeholderview.SwipePlaceHolderView;
-import com.mindorks.placeholderview.listeners.ItemRemovedListener;
 
 import java.util.List;
 

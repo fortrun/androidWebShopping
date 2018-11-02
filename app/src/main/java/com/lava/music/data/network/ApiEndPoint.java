@@ -41,6 +41,8 @@ public final class ApiEndPoint {
     public static final String ENDPOINT_OPEN_SOURCE = BuildConfig.BASE_URL
             + "/5926c34212000035026871cd";
 
+    public static final String ENDPOINT_NIDE_API = "http://littleox.cn/api";
+
     private ApiEndPoint() {
         // This class is not publicly instantiable
     }

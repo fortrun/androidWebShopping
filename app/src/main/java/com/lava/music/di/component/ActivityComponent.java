@@ -28,15 +28,6 @@ import com.lava.music.ui.main.MainActivity;
 import com.lava.music.ui.main.home.HomePageFragment;
 import com.lava.music.ui.main.rating.RateUsDialog;
 import com.lava.music.ui.splash.SplashActivity;
-import com.lava.music.di.PerActivity;
-import com.lava.music.di.module.ActivityModule;
-import com.lava.music.ui.about.AboutFragment;
-import com.lava.music.ui.feed.blogs.BlogFragment;
-import com.lava.music.ui.feed.opensource.OpenSourceFragment;
-import com.lava.music.ui.login.LoginActivity;
-import com.lava.music.ui.main.MainActivity;
-import com.lava.music.ui.main.rating.RateUsDialog;
-import com.lava.music.ui.splash.SplashActivity;
 
 import dagger.Component;
 

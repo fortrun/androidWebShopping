@@ -20,6 +20,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 
+import com.lava.music.data.network.model.Banner;
 import com.lava.music.di.ActivityContext;
 import com.lava.music.di.PerActivity;
 import com.lava.music.data.network.model.BlogResponse;
@@ -46,6 +47,7 @@ import com.lava.music.ui.main.MainMvpPresenter;
 import com.lava.music.ui.main.MainMvpView;
 import com.lava.music.ui.main.MainPageAdapter;
 import com.lava.music.ui.main.MainPresenter;
+import com.lava.music.ui.main.home.BannerAdapter;
 import com.lava.music.ui.main.rating.RatingDialogMvpPresenter;
 import com.lava.music.ui.main.rating.RatingDialogMvpView;
 import com.lava.music.ui.main.rating.RatingDialogPresenter;
@@ -174,5 +176,10 @@ public class ActivityModule {
     @Provides
     GridLayoutManager provideLinearGridLayoutManager(AppCompatActivity activity) {
         return new GridLayoutManager(activity ,3);
+    }
+
+    @Provides
+    BannerAdapter provideBannerAdapter() {
+        return new BannerAdapter(new ArrayList<Banner.Item>());
     }
 }

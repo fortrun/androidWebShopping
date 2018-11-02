@@ -23,8 +23,8 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.internal.$Gson$Types;
 import com.google.gson.reflect.TypeToken;
 import com.lava.music.data.db.DbHelper;
+import com.lava.music.data.network.model.Banner;
 import com.lava.music.di.ApplicationContext;
-import com.lava.music.data.db.DbHelper;
 import com.lava.music.data.db.model.Option;
 import com.lava.music.data.db.model.Question;
 import com.lava.music.data.db.model.User;
@@ -36,10 +36,8 @@ import com.lava.music.data.network.model.LoginResponse;
 import com.lava.music.data.network.model.LogoutResponse;
 import com.lava.music.data.network.model.OpenSourceResponse;
 import com.lava.music.data.prefs.PreferencesHelper;
-import com.lava.music.di.ApplicationContext;
 import com.lava.music.utils.AppConstants;
 import com.lava.music.utils.CommonUtils;
-import com.lava.music.data.db.DbHelper;
 
 import java.lang.reflect.Type;
 import java.util.List;
@@ -309,5 +307,10 @@ public class AppDataManager implements DataManager {
     @Override
     public Single<OpenSourceResponse> getOpenSourceApiCall() {
         return mApiHelper.getOpenSourceApiCall();
+    }
+
+    @Override
+    public Single<Banner> getBannerApiCall() {
+        return mApiHelper.getBannerApiCall();
     }
 }
