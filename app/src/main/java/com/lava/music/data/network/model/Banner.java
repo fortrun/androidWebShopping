@@ -15,9 +15,18 @@ public class Banner {
     @SerializedName("errmsg")
     private String errmsg;
 
+
+    public DataItems getDataItems() {
+        return mDataItems;
+    }
+
+    public void setDataItems(DataItems dataItems) {
+        this.mDataItems = dataItems;
+    }
+
     @Expose
-    @SerializedName("banner")
-    private List<Item> mBanners;
+    @SerializedName("data")
+    private DataItems mDataItems;
 
     public String getError() {
         return error;
@@ -35,12 +44,22 @@ public class Banner {
         this.errmsg = errmsg;
     }
 
-    public List<Item> getBanners() {
-        return mBanners;
-    }
 
-    public void setBanners(List<Item> mBanners) {
-        this.mBanners = mBanners;
+    public static class DataItems {
+
+        public List<Item> getBanners() {
+            return mBanners;
+        }
+
+        public void setBanners(List<Item> mBanners) {
+            this.mBanners = mBanners;
+        }
+
+        @Expose
+        @SerializedName("banner")
+        private List<Item> mBanners;
+
+
     }
 
     public static class Item {

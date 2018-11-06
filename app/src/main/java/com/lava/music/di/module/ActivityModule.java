@@ -48,6 +48,9 @@ import com.lava.music.ui.main.MainMvpView;
 import com.lava.music.ui.main.MainPageAdapter;
 import com.lava.music.ui.main.MainPresenter;
 import com.lava.music.ui.main.home.BannerAdapter;
+import com.lava.music.ui.main.home.HomePageMvpPresenter;
+import com.lava.music.ui.main.home.HomePageMvpView;
+import com.lava.music.ui.main.home.HomePagePresenter;
 import com.lava.music.ui.main.rating.RatingDialogMvpPresenter;
 import com.lava.music.ui.main.rating.RatingDialogMvpView;
 import com.lava.music.ui.main.rating.RatingDialogPresenter;
@@ -181,5 +184,10 @@ public class ActivityModule {
     @Provides
     BannerAdapter provideBannerAdapter() {
         return new BannerAdapter(new ArrayList<Banner.Item>());
+    }
+
+    @Provides
+    HomePageMvpPresenter<HomePageMvpView> provideHomePagePresenter(HomePagePresenter<HomePageMvpView> presenter){
+        return presenter;
     }
 }

@@ -22,7 +22,7 @@ public class BannerAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
     @Override
     public void onBindViewHolder(BaseViewHolder holder, int position) {
-
+        holder.onBind(position);
     }
 
     public BannerAdapter(List<Banner.Item> itemList) {
@@ -36,12 +36,13 @@ public class BannerAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
     public void setData(List<Banner.Item> items) {
         itemList.addAll(items);
+        notifyDataSetChanged();
     }
 
     @Override
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        return new ViewHolder(inflater.inflate(R.layout.banner_item, parent));
+        return new ViewHolder(inflater.inflate(R.layout.banner_item, parent, false));
     }
 
     public class ViewHolder extends BaseViewHolder {

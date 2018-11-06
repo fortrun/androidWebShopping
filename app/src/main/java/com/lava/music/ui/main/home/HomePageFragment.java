@@ -32,6 +32,9 @@ public class HomePageFragment extends BaseFragment implements HomePageMvpView{
     @Inject
     BannerAdapter mBannerAdapter;
 
+    @Inject
+    HomePageMvpPresenter<HomePageMvpView> mPresenter;
+
     public static HomePageFragment getInstance() {
         Bundle args = new Bundle();
         HomePageFragment instance = new HomePageFragment();
@@ -56,7 +59,9 @@ public class HomePageFragment extends BaseFragment implements HomePageMvpView{
             setUnBinder(ButterKnife.bind(this,homeView));
 
         }
+        mPresenter.onAttach(this);
         setUp(homeView);
+        mPresenter.onViewPrepared();
         return homeView;
     }
 

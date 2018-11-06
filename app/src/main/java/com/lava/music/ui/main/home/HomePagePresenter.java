@@ -1,5 +1,7 @@
 package com.lava.music.ui.main.home;
 
+import android.util.Log;
+
 import com.androidnetworking.error.ANError;
 import com.lava.music.data.DataManager;
 import com.lava.music.data.network.model.Banner;
@@ -14,6 +16,8 @@ import io.reactivex.functions.Consumer;
 
 public class HomePagePresenter<V extends HomePageMvpView> extends BasePresenter<V>
         implements HomePageMvpPresenter<V> {
+
+    private static final String TAG= "HomePagePresenter";
 
     @Inject
     public HomePagePresenter(DataManager dataManager,
@@ -33,8 +37,14 @@ public class HomePagePresenter<V extends HomePageMvpView> extends BasePresenter<
                         .subscribe(new Consumer<Banner>() {
                             @Override
                             public void accept(@NonNull Banner banner) throws Exception{
-                                if(banner != null && banner.getBanners() != null) {
-                                    getMvpView().updateRepo(banner.getBanners());
+                                if(banner != null && banner.getDataItems().getBanners() != null) {
+                                    getMvpView().updateRepo(banner.getDataItems().getBanners());
+                                    Log.i(TAG, "query items " + banner.getDataItems().getBanners().size());
+                                }
+                                if(banner != null){
+                                    Log.i(TAG, "Errors: " + banner.getError() +
+                                    ", Errmsg" + banner.getErrmsg());
+
                                 }
                                 getMvpView().hideLoading();
                             }
@@ -45,7 +55,7 @@ public class HomePagePresenter<V extends HomePageMvpView> extends BasePresenter<
                                 if (!isViewAttached()) {
                                     return;
                                 }
-
+                                Log.i(TAG, "query items " ,throwable);
                                 getMvpView().hideLoading();
 
                                 // handle the error here
