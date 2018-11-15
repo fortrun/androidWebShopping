@@ -44,7 +44,6 @@ public class HomePagePresenter<V extends HomePageMvpView> extends BasePresenter<
                                 if(banner != null){
                                     Log.i(TAG, "Errors: " + banner.getError() +
                                     ", Errmsg" + banner.getErrmsg());
-
                                 }
                                 getMvpView().hideLoading();
                             }
