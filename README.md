@@ -1,3 +1,5 @@
+本项目是扩展自下面的项目。由于要使用服务器，所以本人使用了nideshop的服务器源码。具体搭建方法请看nideshop的介绍。
+
 # Android MVP Architecture: Sample App
 [![Mindorks](https://img.shields.io/badge/mindorks-opensource-blue.svg)](https://mindorks.com/open-source-projects)
 [![Mindorks Community](https://img.shields.io/badge/join-community-blue.svg)](https://mindorks.com/join-community)
