@@ -19,6 +19,7 @@ import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.LayoutInflater;
 
 import com.lava.music.data.network.model.Banner;
 import com.lava.music.di.ActivityContext;
@@ -48,6 +49,9 @@ import com.lava.music.ui.main.MainMvpView;
 import com.lava.music.ui.main.MainPageAdapter;
 import com.lava.music.ui.main.MainPresenter;
 import com.lava.music.ui.main.home.BannerAdapter;
+import com.lava.music.ui.main.home.BrandAdapter;
+import com.lava.music.ui.main.home.ChannelAdapter;
+import com.lava.music.ui.main.home.GoodsAdapter;
 import com.lava.music.ui.main.home.HomePageMvpPresenter;
 import com.lava.music.ui.main.home.HomePageMvpView;
 import com.lava.music.ui.main.home.HomePagePresenter;
@@ -178,7 +182,7 @@ public class ActivityModule {
 
     @Provides
     GridLayoutManager provideLinearGridLayoutManager(AppCompatActivity activity) {
-        return new GridLayoutManager(activity ,3);
+        return new GridLayoutManager(activity,3,GridLayoutManager.HORIZONTAL,true);
     }
 
     @Provides
@@ -187,7 +191,27 @@ public class ActivityModule {
     }
 
     @Provides
+    ChannelAdapter provideChannelAdapter(){
+        return new ChannelAdapter(new ArrayList<Banner.Channel>());
+    }
+
+    @Provides
     HomePageMvpPresenter<HomePageMvpView> provideHomePagePresenter(HomePagePresenter<HomePageMvpView> presenter){
         return presenter;
+    }
+
+    @Provides
+    GoodsAdapter provideGoodsAdapter(){
+        return new GoodsAdapter(new ArrayList<Banner.NewGoods>());
+    }
+
+    @Provides
+    LayoutInflater provideLayoutInflater(AppCompatActivity activity) {
+        return LayoutInflater.from(activity.getApplicationContext());
+    }
+
+    @Provides
+    BrandAdapter provideBrandAdapter(){
+        return new BrandAdapter(new ArrayList<Banner.Brand>());
     }
 }
