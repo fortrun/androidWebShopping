@@ -38,7 +38,7 @@ public class HomePagePresenter<V extends HomePageMvpView> extends BasePresenter<
                             @Override
                             public void accept(@NonNull Banner banner) throws Exception{
                                 if(banner != null && banner.getDataItems().getBanners() != null) {
-                                    getMvpView().updateRepo(banner.getDataItems().getBanners());
+                                    getMvpView().updateRepo(banner.getDataItems());
                                     Log.i(TAG, "query items " + banner.getDataItems().getBanners().size());
                                 }
                                 if(banner != null){

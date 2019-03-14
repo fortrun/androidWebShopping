@@ -14,7 +14,7 @@
   -->
 
 <resources>
-    <string name="app_name">音乐商城</string>
+    <string name="app_name">仿严选商城</string>
 
     <!--Toolbar menus-->
     <string name="clear">Clear</string>
@@ -86,8 +86,12 @@
     <string name="retry">Retry</string>
     <string name="tx_question_number">问题 %d</string>
 
-    <string name="tab_main_page">主页</string>
+    <string name="tab_main_page">首页</string>
     <string name="tab_sell_works">卖歌</string>
+    <string name="tab_cart">购物车</string>
     <string name="tab_my_page">我的</string>
     <string name="hint_search">搜索</string>
+    <!--add by lingbj-->
+    <string name="str_brand_bolock">品牌制造商直供</string>
+    <string name="str_floor_price"> %s 元起</string>
 </resources>

@@ -61,6 +61,13 @@
                 android:value=".ui.main.MainActivity" />
         </activity>
 
+        <activity android:name=".ui.goods.GoodsDetailActivity"
+            android:launchMode="singleTask"
+            android:parentActivityName=".ui.main.MainActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
     </application>
 
 </manifest>

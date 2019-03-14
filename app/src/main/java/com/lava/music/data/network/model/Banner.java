@@ -1,8 +1,11 @@
 package com.lava.music.data.network.model;
 
+import android.support.annotation.NonNull;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Collections;
 import java.util.List;
 
 public class Banner {
@@ -48,17 +51,33 @@ public class Banner {
     public static class DataItems {
 
         public List<Item> getBanners() {
+            Collections.sort(mBanners);
             return mBanners;
         }
 
-        public void setBanners(List<Item> mBanners) {
-            this.mBanners = mBanners;
+        public List<Channel> getChannels() {
+            return mChannels;
+        }
+
+        public List<NewGoods> getNewGoodsList() {
+            return mNewGoodsList;
+        }
+
+        public List<NewGoods> getHotGoodsList() {
+            return mHotGoodsList;
+        }
+
+        public List<Brand> getBrandList() {
+            return mBrandList;
+        }
+
+        public List<Topic> getTopicList() {
+            return mTopicList;
         }
 
         @Expose
         @SerializedName("banner")
         private List<Item> mBanners;
-
 
         @Expose
         @SerializedName("channel")
@@ -70,7 +89,7 @@ public class Banner {
 
         @Expose
         @SerializedName("hotGoodsList")
-        private List<HotGoods> mHotGoodsList;
+        private List<NewGoods> mHotGoodsList;
 
         @Expose
         @SerializedName("brandList")
@@ -86,9 +105,6 @@ public class Banner {
 //        private List<Topic> mTopicList;
     }
 
-//    public static class Topic {
-//
-//    }
     public static class Topic {
         @Expose
         @SerializedName("id")
@@ -190,6 +206,45 @@ public class Banner {
         @SerializedName("new_sort_order")
         private int new_sort_order;
 
+        public int getID() {
+            return ID;
+        }
+
+        public String getName() {
+            return mName;
+        }
+
+        public String getSimpleDesc() {
+            return mSimpleDesc;
+        }
+
+        public String getPic_url() {
+            return pic_url;
+        }
+
+        public int getSort_order() {
+            return sort_order;
+        }
+
+        public int getIs_show() {
+            return is_show;
+        }
+
+        public float getFloor_price() {
+            return floor_price;
+        }
+
+        public String getApp_list_pic_url() {
+            return app_list_pic_url;
+        }
+
+        public String getNew_pic_url() {
+            return new_pic_url;
+        }
+
+        public int getNew_sort_order() {
+            return new_sort_order;
+        }
     }
 
     public static class HotGoods extends NewGoods {
@@ -262,6 +317,26 @@ public class Banner {
         @SerializedName("sort_order")
         private int mSortOrder;
 
+        public int getID() {
+            return ID;
+        }
+
+        public String getName() {
+            return mName;
+        }
+
+        public String getUrl() {
+            return mUrl;
+        }
+
+        public String getImageUrl() {
+            return mImageUrl;
+        }
+
+        public int getSortOrder() {
+            return mSortOrder;
+        }
+
         public void setID(int ID) {
             this.ID = ID;
         }
@@ -283,7 +358,7 @@ public class Banner {
         }
     }
 
-    public static class Item {
+    public static class Item implements Comparable<Item>{
         @Expose
         @SerializedName("ad_position_id")
         private int adPositionId;
@@ -324,73 +399,39 @@ public class Banner {
             return adPositionId;
         }
 
-        public void setAdPositionId(int adPositionId) {
-            this.adPositionId = adPositionId;
-        }
 
         public int getID() {
             return ID;
-        }
-
-        public void setID(int ID) {
-            this.ID = ID;
         }
 
         public String getLink() {
             return mLink;
         }
 
-        public void setLink(String mLink) {
-            this.mLink = mLink;
-        }
-
         public String getImageUrl() {
             return mImageUrl;
-        }
-
-        public void setImageUrl(String mImageUrl) {
-            this.mImageUrl = mImageUrl;
         }
 
         public String getContent() {
             return mContent;
         }
 
-        public void setContent(String mContent) {
-            this.mContent = mContent;
-        }
-
         public String getName() {
             return mName;
-        }
-
-        public void setName(String mName) {
-            this.mName = mName;
         }
 
         public int getMediaType() {
             return mMediaType;
         }
 
-        public void setMediaType(int mMediaType) {
-            this.mMediaType = mMediaType;
-        }
-
         public int getEndTime() {
             return mEndTime;
-        }
-
-        public void setEndTime(int mEndTime) {
-            this.mEndTime = mEndTime;
         }
 
         public int getEnanbled() {
             return Enanbled;
         }
 
-        public void setEnanbled(int enanbled) {
-            Enanbled = enanbled;
-        }
 
         @Override
         public boolean equals(Object obj) {
@@ -399,6 +440,11 @@ public class Banner {
                 return o.getID() == this.ID;
             }
             return false;
+        }
+
+        @Override
+        public int compareTo(@NonNull Item o) {
+            return adPositionId - o.adPositionId;
         }
     }
 }

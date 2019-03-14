@@ -6,5 +6,5 @@ import com.lava.music.ui.base.MvpView;
 import java.util.List;
 
 public interface HomePageMvpView extends MvpView {
-    void updateRepo(List<Banner.Item> bannerItems);
+    void updateRepo(Banner.DataItems bannerItems);
 }

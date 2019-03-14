@@ -88,6 +88,10 @@
 
     <string name="tab_main_page">Man Page</string>
     <string name="tab_sell_works">Sell Musics</string>
+    <string name="tab_cart">Cart</string>
     <string name="tab_my_page">Mine</string>
     <string name="hint_search">Search</string>
+    <!--add by lingbj-->
+    <string name="str_brand_bolock">Famous brand show</string>
+    <string name="str_floor_price">Starting from %s yuan</string>
 </resources>

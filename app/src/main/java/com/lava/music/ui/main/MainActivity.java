@@ -286,9 +286,10 @@ public class MainActivity extends BaseActivity implements MainMvpView {
         // set tabs
         mHomeTab.addTab(mHomeTab.newTab().setText(R.string.tab_main_page));
         mHomeTab.addTab(mHomeTab.newTab().setText(R.string.tab_sell_works));
+        mHomeTab.addTab(mHomeTab.newTab().setText(R.string.tab_cart));
         mHomeTab.addTab(mHomeTab.newTab().setText(R.string.tab_my_page));
 
-        mPagerAdapter.setCount(3);
+        mPagerAdapter.setCount(mHomeTab.getTabCount());
         mViewPager.setAdapter(mPagerAdapter);
 
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mHomeTab));

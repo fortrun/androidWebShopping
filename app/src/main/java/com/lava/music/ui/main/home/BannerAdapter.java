@@ -62,7 +62,7 @@ public class BannerAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
         @Override
         public void onBind(int position) {
-            if (getItemCount() < position && position < 0)
+            if (getItemCount() < position || position < 0)
                 return;
             Banner.Item item = itemList.get(position);
             String imageUrl = item.getImageUrl();
@@ -70,7 +70,7 @@ public class BannerAdapter extends RecyclerView.Adapter<BaseViewHolder> {
                 Glide.with(mBanner.getContext())
                         .load(imageUrl)
                         .asBitmap()
-                        .centerCrop()
+                        .fitCenter()
                         .into(mBanner);
             }
         }

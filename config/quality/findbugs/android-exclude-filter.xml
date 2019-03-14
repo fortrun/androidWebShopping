@@ -1,4 +1,4 @@
-<!--
+<?xml version="1.0" encoding="UTF-8"?><!--
   ~ Copyright (C) 2017 MINDORKS NEXTGEN PRIVATE LIMITED
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -12,13 +12,20 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License
   -->
+<FindBugsFilter>
+    <Match>
+        <Class name="~.*\.R\$.*"/>
+    </Match>
+    <Match>
+        <Class name="~.*\.Manifest\$.*"/>
+    </Match>
+    <!-- All bugs in test classes, except for JUnit-specific bugs -->
+    <Match>
+        <Class name="~.*\.*Test" />
+        <Not>
+            <Bug code="IJU" />
+        </Not>
+    </Match>
 
-<resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="app_bar_height">0dp</dimen>
-    <dimen name="banner_height">200dp</dimen>
-    <dimen name="pic_text_gap">4dp</dimen>
-    <dimen name="goods_size">160dp</dimen>
-</resources>
+
+</FindBugsFilter>

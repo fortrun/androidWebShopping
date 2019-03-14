@@ -26,6 +26,8 @@ public class MainPageAdapter extends FragmentStatePagerAdapter {
             case 1:
                 return BlogFragment.newInstance();
             case 2:
+                return new Fragment();
+            case 3:
                 return OpenSourceFragment.newInstance();
             default:
                 return null;
