@@ -31,42 +31,43 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-<!--
-            <android.support.design.widget.AppBarLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:elevation="5dp">-->
+            <!--
+                        <android.support.design.widget.AppBarLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:elevation="5dp">-->
 
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    style="@style/Toolbar"
-                    android:background="@color/colorPrimary"
-                    app:subtitleTextColor="@color/white"
-                    app:title="@string/app_name"
-                    app:titleTextAppearance="@style/Toolbar.TitleText"
-                    app:titleTextColor="@color/white" />
-<!--
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/light_gray" />-->
-<!--
-            </android.support.design.widget.AppBarLayout>-->
-<!--            <TextView
-                android:id="@+id/question_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/clear"
-                style="@style/TextStyle"/>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                style="@style/Toolbar"
+                android:background="@color/colorPrimary"
+                app:subtitleTextColor="@color/white"
+                app:title="@string/app_name"
+                app:titleTextAppearance="@style/Toolbar.TitleText"
+                app:titleTextColor="@color/white" />
+            <!--
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/light_gray" />-->
+            <!--
+                        </android.support.design.widget.AppBarLayout>-->
+            <!--            <TextView
+                            android:id="@+id/question_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/clear"
+                            style="@style/TextStyle"/>
 
-            <com.mindorks.placeholderview.SwipePlaceHolderView
-                android:id="@+id/cards_container"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />-->
+                        <com.mindorks.placeholderview.SwipePlaceHolderView
+                            android:id="@+id/cards_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />-->
             <android.support.v4.view.ViewPager
                 android:id="@+id/tab_pages"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
+                android:layout_marginBottom="48dp"/>
 
         </LinearLayout>
 
