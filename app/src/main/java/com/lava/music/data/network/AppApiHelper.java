@@ -16,6 +16,8 @@
 package com.lava.music.data.network;
 
 import com.lava.music.data.network.model.Banner;
+import com.lava.music.data.network.model.GoodsResponse;
+import com.lava.music.data.network.model.NideRequest;
 import com.lava.music.data.network.model.OpenSourceResponse;
 import com.lava.music.data.network.model.BlogResponse;
 import com.lava.music.data.network.model.LoginRequest;
@@ -107,6 +109,14 @@ public class AppApiHelper implements ApiHelper {
                 .addHeaders(mApiHeader.getProtectedApiHeader())
                 .build()
                 .getObjectSingle(Banner.class);
+    }
+
+    @Override
+    public Single<GoodsResponse> getGoodsPage(NideRequest.GoodsRequest request) {
+        return Rx2AndroidNetworking.get(ApiEndPoint.ENDPOINT_NIDE_GOODS)
+                .addHeaders(request)
+                .build()
+                .getObjectSingle(GoodsResponse.class);
     }
 }
 

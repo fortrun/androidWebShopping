@@ -17,9 +17,11 @@ package com.lava.music.data.network;
 
 import com.lava.music.data.network.model.Banner;
 import com.lava.music.data.network.model.BlogResponse;
+import com.lava.music.data.network.model.GoodsResponse;
 import com.lava.music.data.network.model.LoginRequest;
 import com.lava.music.data.network.model.LoginResponse;
 import com.lava.music.data.network.model.LogoutResponse;
+import com.lava.music.data.network.model.NideRequest;
 import com.lava.music.data.network.model.OpenSourceResponse;
 
 import io.reactivex.Single;
@@ -45,4 +47,6 @@ public interface ApiHelper {
     Single<OpenSourceResponse> getOpenSourceApiCall();
 
     Single<Banner> getBannerApiCall();
+
+    Single<GoodsResponse> getGoodsPage(NideRequest.GoodsRequest request);
 }

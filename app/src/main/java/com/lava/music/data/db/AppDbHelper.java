@@ -130,6 +130,16 @@ public class AppDbHelper implements DbHelper {
     }
 
     @Override
+    public Observable<Question> queryQuestion(final long id) {
+        return Observable.fromCallable(new Callable<Question>() {
+            @Override
+            public Question call() throws Exception {
+                return mDaoSession.getQuestionDao().load(id);
+            }
+        });
+    }
+
+    @Override
     public Observable<Boolean> saveOptionList(final List<Option> optionList) {
         return Observable.fromCallable(new Callable<Boolean>() {
             @Override

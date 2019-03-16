@@ -78,6 +78,7 @@ public class BlogPresenter<V extends BlogMvpView> extends BasePresenter<V>
                             handleApiError(anError);
                         }
                     }
-                }));
+                })
+        );
     }
 }

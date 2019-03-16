@@ -8,16 +8,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Collections;
 import java.util.List;
 
-public class Banner {
-
-    @Expose
-    @SerializedName("errno")
-    private String error;
-
-    @Expose
-    @SerializedName("errmsg")
-    private String errmsg;
-
+public class Banner extends NideResponse{
 
     public DataItems getDataItems() {
         return mDataItems;
@@ -30,23 +21,6 @@ public class Banner {
     @Expose
     @SerializedName("data")
     private DataItems mDataItems;
-
-    public String getError() {
-        return error;
-    }
-
-    public void setError(String error) {
-        this.error = error;
-    }
-
-    public String getErrmsg() {
-        return errmsg;
-    }
-
-    public void setErrmsg(String errmsg) {
-        this.errmsg = errmsg;
-    }
-
 
     public static class DataItems {
 
@@ -162,89 +136,6 @@ public class Banner {
         @SerializedName("is_show")
         private int is_show;
 
-    }
-
-    public static class Brand {
-
-        @Expose
-        @SerializedName("id")
-        private int ID;
-
-        @Expose
-        @SerializedName("name")
-        private String mName;
-
-        @Expose
-        @SerializedName("simple_desc")
-        private String mSimpleDesc;
-
-        @Expose
-        @SerializedName("pic_url")
-        private String pic_url;
-
-        @Expose
-        @SerializedName("sort_order")
-        private int sort_order;
-
-        @Expose
-        @SerializedName("is_show")
-        private int is_show;
-
-        @Expose
-        @SerializedName("floor_price")
-        private float floor_price;
-
-        @Expose
-        @SerializedName("app_list_pic_url")
-        private String app_list_pic_url;
-
-        @Expose
-        @SerializedName("new_pic_url")
-        private String new_pic_url;
-
-        @Expose
-        @SerializedName("new_sort_order")
-        private int new_sort_order;
-
-        public int getID() {
-            return ID;
-        }
-
-        public String getName() {
-            return mName;
-        }
-
-        public String getSimpleDesc() {
-            return mSimpleDesc;
-        }
-
-        public String getPic_url() {
-            return pic_url;
-        }
-
-        public int getSort_order() {
-            return sort_order;
-        }
-
-        public int getIs_show() {
-            return is_show;
-        }
-
-        public float getFloor_price() {
-            return floor_price;
-        }
-
-        public String getApp_list_pic_url() {
-            return app_list_pic_url;
-        }
-
-        public String getNew_pic_url() {
-            return new_pic_url;
-        }
-
-        public int getNew_sort_order() {
-            return new_sort_order;
-        }
     }
 
     public static class HotGoods extends NewGoods {

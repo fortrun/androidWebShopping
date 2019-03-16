@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.lava.music.R;
 import com.lava.music.data.network.model.Banner;
+import com.lava.music.data.network.model.Brand;
 import com.lava.music.ui.base.BaseViewHolder;
 
 import java.util.List;
@@ -24,9 +25,9 @@ public class BrandAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     @Inject
     LayoutInflater mInflater;
 
-    private List<Banner.Brand> mData;
+    private List<Brand> mData;
 
-    public BrandAdapter (List<Banner.Brand> list) {
+    public BrandAdapter (List<Brand> list) {
         mData = list;
     }
 
@@ -47,7 +48,7 @@ public class BrandAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         return mData.size();
     }
 
-    public void setData(List<Banner.Brand> list){
+    public void setData(List<Brand> list){
         mData.addAll(list);
         notifyDataSetChanged();
     }
@@ -75,7 +76,7 @@ public class BrandAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
         @Override
         public void onBind(int position) {
-            Banner.Brand item = mData.get(position);
+            Brand item = mData.get(position);
             Glide.with(mBrandPic.getContext())
                     .load(item.getNew_pic_url())
                     .asBitmap()

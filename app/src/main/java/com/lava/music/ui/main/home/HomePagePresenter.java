@@ -42,7 +42,7 @@ public class HomePagePresenter<V extends HomePageMvpView> extends BasePresenter<
                                     Log.i(TAG, "query items " + banner.getDataItems().getBanners().size());
                                 }
                                 if(banner != null){
-                                    Log.i(TAG, "Errors: " + banner.getError() +
+                                    Log.i(TAG, "Errors: " + banner.getErrno() +
                                     ", Errmsg" + banner.getErrmsg());
                                 }
                                 getMvpView().hideLoading();

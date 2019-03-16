@@ -22,6 +22,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 
 import com.lava.music.data.network.model.Banner;
+import com.lava.music.data.network.model.Brand;
 import com.lava.music.di.ActivityContext;
 import com.lava.music.di.PerActivity;
 import com.lava.music.data.network.model.BlogResponse;
@@ -212,6 +213,6 @@ public class ActivityModule {
 
     @Provides
     BrandAdapter provideBrandAdapter(){
-        return new BrandAdapter(new ArrayList<Banner.Brand>());
+        return new BrandAdapter(new ArrayList<Brand>());
     }
 }

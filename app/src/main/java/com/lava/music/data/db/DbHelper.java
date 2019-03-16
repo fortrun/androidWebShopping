@@ -47,4 +47,6 @@ public interface DbHelper {
     Observable<Boolean> saveQuestionList(List<Question> questionList);
 
     Observable<Boolean> saveOptionList(List<Option> optionList);
+
+    Observable<Question> queryQuestion(long id);
 }

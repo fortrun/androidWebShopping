@@ -24,6 +24,8 @@ import com.google.gson.internal.$Gson$Types;
 import com.google.gson.reflect.TypeToken;
 import com.lava.music.data.db.DbHelper;
 import com.lava.music.data.network.model.Banner;
+import com.lava.music.data.network.model.GoodsResponse;
+import com.lava.music.data.network.model.NideRequest;
 import com.lava.music.di.ApplicationContext;
 import com.lava.music.data.db.model.Option;
 import com.lava.music.data.db.model.Question;
@@ -312,5 +314,15 @@ public class AppDataManager implements DataManager {
     @Override
     public Single<Banner> getBannerApiCall() {
         return mApiHelper.getBannerApiCall();
+    }
+
+    @Override
+    public Observable<Question> queryQuestion(long id) {
+        return mDbHelper.queryQuestion(id);
+    }
+
+    @Override
+    public Single<GoodsResponse> getGoodsPage(NideRequest.GoodsRequest request) {
+        return mApiHelper.getGoodsPage(request);
     }
 }
