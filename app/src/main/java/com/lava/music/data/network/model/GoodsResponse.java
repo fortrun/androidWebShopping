@@ -10,21 +10,20 @@ public class GoodsResponse extends NideResponse {
 
     @Expose
     @SerializedName("data")
-    Data GoodsData;
+    GoodsData GoodsData;
 
-    public Data getGoodsData() {
+    public GoodsData getGoodsData() {
         return GoodsData;
     }
 
-    public void setGoodsData(Data goodsData) {
+    public void setGoodsData(GoodsData goodsData) {
         GoodsData = goodsData;
     }
 
-    class GoodsData extends Data{
+    public static class GoodsData {
         @Expose
         @SerializedName("info")
         GoodsDetail info;
-
 
         @Expose
         @SerializedName("gallery")
@@ -39,15 +38,14 @@ public class GoodsResponse extends NideResponse {
         @SerializedName("userHasCollect")
         int userHasCollect;
 
-
         @Expose
         @SerializedName("issue")
         List<Issue> issue;
 
 
-//        @Expose
-//        @SerializedName("comment")
-//        Comment comment;
+        @Expose
+        @SerializedName("comment")
+        GoodsComments comment;
 
         @Expose
         @SerializedName("brand")
@@ -55,7 +53,7 @@ public class GoodsResponse extends NideResponse {
 
         @Expose
         @SerializedName("specificationList")
-        List<Specification> specificationList;
+        List<SpecificationSuper> specificationList;
 
 
         @Expose
@@ -110,11 +108,11 @@ public class GoodsResponse extends NideResponse {
             this.brand = brand;
         }
 
-        public List<Specification> getSpecificationList() {
+        public List<SpecificationSuper> getSpecificationList() {
             return specificationList;
         }
 
-        public void setSpecificationList(List<Specification> specificationList) {
+        public void setSpecificationList(List<SpecificationSuper> specificationList) {
             this.specificationList = specificationList;
         }
 
@@ -124,6 +122,14 @@ public class GoodsResponse extends NideResponse {
 
         public void setProductList(List<Product> productList) {
             this.productList = productList;
+        }
+
+        public GoodsComments getComment() {
+            return comment;
+        }
+
+        public void setComment(GoodsComments comment) {
+            this.comment = comment;
         }
     }
 }

@@ -1,5 +1,7 @@
 package com.lava.music.ui.goods;
 
+import android.util.Log;
+
 import com.androidnetworking.error.ANError;
 import com.lava.music.data.DataManager;
 import com.lava.music.data.network.model.GoodsResponse;
@@ -52,7 +54,7 @@ public class GoodsPresenter<V extends GoodsMvpView> extends BasePresenter<V>
                         if(!isViewAttached()){
                             return;
                         }
-                        AppLogger.e("get goods detail fail",throwable);
+                        Log.e("GoodsPresenter","get goods detail fail",throwable);
                         if(throwable instanceof ANError){
                             handleApiError((ANError)throwable);
                         }
