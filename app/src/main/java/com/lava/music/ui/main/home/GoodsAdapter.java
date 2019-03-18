@@ -14,12 +14,25 @@ import com.lava.music.ui.base.BaseViewHolder;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class GoodsAdapter extends RecyclerView.Adapter<BaseViewHolder> {
+public class GoodsAdapter extends RecyclerView.Adapter<BaseViewHolder> implements View.OnClickListener{
 
     private List<Banner.NewGoods> mData;
+
+    public HomePageMvpView getView() {
+        return view;
+    }
+
+    public void setView(HomePageMvpView view) {
+        this.view = view;
+    }
+
+    private HomePageMvpView view;
+
     public GoodsAdapter(List<Banner.NewGoods> goods){
         mData = goods;
     }
@@ -33,6 +46,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     public BaseViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
         View view = inflater.inflate(R.layout.goods_item, viewGroup, false);
+        view.setOnClickListener(this);
         return new GoodsHolder(view);
     }
 
@@ -46,6 +60,13 @@ public class GoodsAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         return mData.size();
     }
 
+    @Override
+    public void onClick(View v) {
+        assert v != null;
+        String id = (String) v.getTag();
+        getView().viewGoods(id);
+    }
+
     public class GoodsHolder extends BaseViewHolder{
 
         @BindView(R.id.goods_pic)
@@ -56,6 +77,8 @@ public class GoodsAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
         @BindView(R.id.goods_price)
         TextView price;
+
+
 
         @Override
         protected void clear() {
@@ -79,6 +102,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<BaseViewHolder> {
                     .asBitmap()
                     .fitCenter()
                     .into(pic);
+            itemView.setTag(goods.getID()+"");
         }
     }
 }

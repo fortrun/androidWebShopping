@@ -42,6 +42,9 @@ import com.lava.music.ui.feed.opensource.OpenSourceAdapter;
 import com.lava.music.ui.feed.opensource.OpenSourceMvpPresenter;
 import com.lava.music.ui.feed.opensource.OpenSourceMvpView;
 import com.lava.music.ui.feed.opensource.OpenSourcePresenter;
+import com.lava.music.ui.goods.GoodsMvpPresenter;
+import com.lava.music.ui.goods.GoodsMvpView;
+import com.lava.music.ui.goods.GoodsPresenter;
 import com.lava.music.ui.login.LoginMvpPresenter;
 import com.lava.music.ui.login.LoginMvpView;
 import com.lava.music.ui.login.LoginPresenter;
@@ -215,4 +218,13 @@ public class ActivityModule {
     BrandAdapter provideBrandAdapter(){
         return new BrandAdapter(new ArrayList<Brand>());
     }
+
+    @Provides
+    @PerActivity
+    GoodsMvpPresenter<GoodsMvpView> provideGoodsPresenter(
+            GoodsPresenter<GoodsMvpView> presenter){
+        return presenter;
+    }
+
+
 }

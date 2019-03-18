@@ -23,6 +23,7 @@ import com.lava.music.ui.about.AboutFragment;
 import com.lava.music.ui.feed.FeedActivity;
 import com.lava.music.ui.feed.blogs.BlogFragment;
 import com.lava.music.ui.feed.opensource.OpenSourceFragment;
+import com.lava.music.ui.goods.GoodsDetailActivity;
 import com.lava.music.ui.login.LoginActivity;
 import com.lava.music.ui.main.MainActivity;
 import com.lava.music.ui.main.home.HomePageFragment;
@@ -56,4 +57,6 @@ public interface ActivityComponent {
     void inject(RateUsDialog dialog);
 
     void inject(HomePageFragment fragment);
+
+    void inject(GoodsDetailActivity goodsDetail);
 }

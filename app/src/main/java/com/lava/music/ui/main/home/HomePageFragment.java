@@ -1,5 +1,6 @@
 package com.lava.music.ui.main.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -18,6 +19,7 @@ import com.lava.music.R;
 import com.lava.music.data.network.model.Banner;
 import com.lava.music.di.component.ActivityComponent;
 import com.lava.music.ui.base.BaseFragment;
+import com.lava.music.ui.goods.GoodsDetailActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,6 +95,7 @@ public class HomePageFragment extends BaseFragment implements HomePageMvpView {
         GridLayoutManager goodsLayoutManager = new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false);
         mGoodsList.setAdapter(mGoodsAadapter);
         mGoodsList.setLayoutManager(goodsLayoutManager);
+        mGoodsAadapter.setView(this);
         // ---------hot goods
         GridLayoutManager hotGoodsManager = new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false);
         HotAdapter = new GoodsAdapter(new ArrayList<Banner.NewGoods>());
@@ -156,5 +159,14 @@ public class HomePageFragment extends BaseFragment implements HomePageMvpView {
     public void onDetach() {
         super.onDetach();
         mHandler.removeMessages(BANNER_EVENT_SCOLL);
+    }
+
+    @Override
+    public void viewGoods(String id) {
+
+        Intent open = new Intent();
+        open.putExtra(GoodsDetailActivity.GOODS_ID, id);
+        open.setClass(getContext(), GoodsDetailActivity.class);
+        startActivity(open);
     }
 }
