@@ -44,7 +44,7 @@ public final class ApiEndPoint {
     public static final String ENDPOINT_NIDE_SITE = "http://littleox.cn";
     public static final String ENDPOINT_NIDE_API = ENDPOINT_NIDE_SITE + "/api";
 
-    public static final String ENDPOINT_NIDE_GOODS = ENDPOINT_NIDE_SITE +"/goods";
+    public static final String ENDPOINT_NIDE_GOODS = ENDPOINT_NIDE_SITE +"/goods/detail";
 
     private ApiEndPoint() {
         // This class is not publicly instantiable
