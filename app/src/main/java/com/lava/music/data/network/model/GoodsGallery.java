@@ -7,23 +7,23 @@ public class GoodsGallery {
 
     @Expose
     @SerializedName("id")
-    private int id;
+    int id;
 
     @Expose
     @SerializedName("goods_id")
-    private int goods_id;
+    int goods_id;
 
     @Expose
     @SerializedName("img_url")
-    private String img_url;
+    String img_url;
 
     @Expose
     @SerializedName("img_desc")
-    private int img_desc;
+    String img_desc;
 
     @Expose
     @SerializedName("sort_order")
-    private int sort_order;
+    int sort_order;
 
     public int getId() {
         return id;
@@ -49,11 +49,11 @@ public class GoodsGallery {
         this.img_url = img_url;
     }
 
-    public int getImg_desc() {
+    public String getImg_desc() {
         return img_desc;
     }
 
-    public void setImg_desc(int img_desc) {
+    public void setImg_desc(String img_desc) {
         this.img_desc = img_desc;
     }
 

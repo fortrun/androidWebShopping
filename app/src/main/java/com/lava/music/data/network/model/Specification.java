@@ -20,7 +20,7 @@ public class Specification {
 
     @Expose
     @SerializedName("value")
-    private int value;
+    private String value;
     @Expose
     @SerializedName("pic_url")
     private String pic_url;
@@ -53,11 +53,11 @@ public class Specification {
         this.specification_id = specification_id;
     }
 
-    public int getValue() {
+    public String getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    public void setValue(String value) {
         this.value = value;
     }
 

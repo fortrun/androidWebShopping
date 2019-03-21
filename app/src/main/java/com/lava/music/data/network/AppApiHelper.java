@@ -113,7 +113,7 @@ public class AppApiHelper implements ApiHelper {
 
     @Override
     public Single<GoodsResponse> getGoodsPage(NideRequest.GoodsRequest request) {
-        return Rx2AndroidNetworking.post(ApiEndPoint.ENDPOINT_NIDE_GOODS)
+        return Rx2AndroidNetworking.get(ApiEndPoint.ENDPOINT_NIDE_GOODS)
                 .addQueryParameter(request)
                 .build()
                 .getObjectSingle(GoodsResponse.class);
