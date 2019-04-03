@@ -24,9 +24,11 @@ import com.lava.music.data.DataManager;
 import com.lava.music.di.component.ApplicationComponent;
 import com.lava.music.di.component.DaggerApplicationComponent;
 import com.lava.music.di.module.ApplicationModule;
+import com.lava.music.ui.base.CrashHandler;
 import com.lava.music.utils.AppLogger;
 import com.lava.music.data.DataManager;
 import com.lava.music.utils.AppLogger;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import javax.inject.Inject;
 
@@ -64,6 +66,10 @@ public class MvpApp extends Application {
         }
 
         CalligraphyConfig.initDefault(mCalligraphyConfig);
+        //CrashHandler.getInstance().init(this);
+        // init bugly component
+        CrashReport.UserStrategy strategy = new CrashReport.UserStrategy(this);
+        CrashReport.initCrashReport(this,"b8683eea77",true,strategy);
     }
 
     public ApplicationComponent getComponent() {
